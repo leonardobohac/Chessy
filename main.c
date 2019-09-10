@@ -3,7 +3,7 @@
 //  Chessy
 //
 //  Created by Leonardo Bohac on 15/07/19.
-//  Copyright © 2019 Leonardo Bohac. All rights reserved.
+//  Copyright © 2019 Leonardo Bohac.
 //
 
 // This is a purely C Chess Engine, made for simulating chess games.

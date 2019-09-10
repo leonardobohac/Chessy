@@ -19,7 +19,7 @@
 // The main and most important function is the one named ‘Check’, which tells if a given king
 // is currently under check. It has to be called each time a new move is being evaluated as
 // valid or not. The verification starts at the king’s position, and looks for the squares it
-// could have been being checked by some enemy team (looks for knights on knight squares around
+// could have been being checked by some enemy piece (looks for knights on knight squares around
 // the king, looks for pawns, bishops or queens on diagonal direction squares, etc)
 
 #include <stdio.h>

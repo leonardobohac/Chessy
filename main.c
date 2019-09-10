@@ -11,7 +11,7 @@
 // programming operations (ifses, elses and fors).
 
 // Most of the focus is directed toward providing a very fast and friendly
-// chess games simulations.
+// chess games simulator.
 
 // At this stage of development, the code is able to play a random game, and return
 // a winning team. It’s the backbone of any chess engine.

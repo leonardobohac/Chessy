@@ -122,7 +122,7 @@ int Pieces[2][25][2] = {{{8,8},
                          {6,0},{6,1},{6,2},{6,3},{6,4},{6,5},{6,6},{6,7},{7,0},{7,1},{7,2},{7,3},{7,4},{7,5},{7,6},{7,7},
                          {8,8},{8,8},{8,8},{8,8},{8,8},{8,8},{8,8},{8,8}}};
 
-int MoveStack[500][6] = {0};
+int MoveStack[500][6] = {0};  // This stores the valid moves for one team at the current round. 500 is high enough to avoid a stackoverflow
 
 int QCastle_W = 1;   // Still can Queen Castle
 int QCastle_B = 1;

@@ -16,7 +16,7 @@
 // At this stage of development, the code is able to play a random game, and return
 // a winning team. It’d be the backbone of any chess engine.
 
-// The main and most important function is the one name ‘Check’, which tells if a given king
+// The main and most important function is the one named ‘Check’, which tells if a given king
 // is currently under check. It has to be called each time a new move is being evaluated as
 // valid or not. The verification starts at the king’s position, and looks for the squares it
 // could have been being checked by some enemy team (looks for knights on knight squares around
@@ -27,9 +27,6 @@
 
 void *memcpy(void *str1, const void *str2, size_t n);
 
-void Write_Board(void);
-void Write_Score(double s);
-void Write_Train(int depth, int reps);
 
 int min(int x, int y)
 {

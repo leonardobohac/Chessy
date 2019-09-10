@@ -1,10 +1,26 @@
 //
-//  main.c
+//  
 //  Chessy
 //
 //  Created by Leonardo Bohac on 15/07/19.
 //  Copyright © 2019 Leonardo Bohac. All rights reserved.
 //
+
+// This is a purely C Chess Engine, made for simulating chess games.
+// The code is written almost as a pseudocode, using only the basic
+// programming operations (ifses, elses and fors).
+
+// Most of the focus is directed toward providing a very fast and friendly
+// chess games simulations.
+
+// At this stage of development, the code is able to play a random game, and return
+// a winning team. It’s the backbone of any chess engine.
+
+// The main and most important function is the one name ‘Check’, which tells if a given king
+// is currently under check. It has to be called each time a new move is being evaluated as
+// valid or not. The verification starts at the king’s position, and looks for the squares it
+// could have been being checked by some enemy team (looks for knights on knight squares around
+// the king, looks for pawns, bishops or queens on diagonal direction squares, etc)
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -3320,78 +3336,5 @@ int Play(int rounds, int new)
 
 int main()
 {
-    Write_Train(20, 50);
-    return 0;
-}
-
-void Write_Board(void)
-{
-    FILE * fp = fopen("./Train/Boards.txt","a");
-    
-    for(int i = 0; i < 8; i++)
-    {
-        for(int j = 0; j < 8; j++)
-        {
-            fprintf(fp, "%d ", Board[i][j]);
-        }
-    }
-    fprintf(fp, "\n");
-    
-    fclose(fp);
-}
-void Write_Score(double s)
-{
-    FILE * fp = fopen("./Train/Scores.txt","a");
-    
-    fprintf(fp, "%f\n", s);
-    
-    fclose(fp);
-}
-void Write_Train(int depth, int reps)
-{
-    int b_copy[8][8];
-    int p_copy[2][25][2];
-    
-    for(int d = 1; d <= depth; d++)
-    {
-        for(int n = 1; n <= reps; n++)
-        {
-            printf("%d, %d\n", d, n);
-            
-            Play(d, 1);
-            
-            Write_Board();
-            
-            memcpy(b_copy, Board, sizeof(b_copy));
-            memcpy(p_copy, Pieces, sizeof(p_copy));
-            
-            int I_QCastle_W = QCastle_W;
-            int I_KCastle_W = KCastle_W;
-            int I_QCastle_B = QCastle_B;
-            int I_KCastle_B = KCastle_B;
-            
-            double w = 0;
-            double b = 0;
-            
-            while(w + b < 1000)
-            {
-                int G = Play(200-d, 0);
-            
-                if(G == 0){w += 1;}
-                if(G == 1){b += 1;}
-                
-                memcpy(Board, b_copy, sizeof(Board));
-                memcpy(Pieces, p_copy, sizeof(Pieces));
-                
-                QCastle_W = I_QCastle_W;
-                KCastle_W = I_KCastle_W;
-                QCastle_B = I_QCastle_B;
-                KCastle_B = I_KCastle_B;
-            }
-            
-            double score = w / (w + b);
-            
-            Write_Score(score);
-        }
-    }
+    Play(100,1);
 }

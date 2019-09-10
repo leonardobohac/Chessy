@@ -34,7 +34,7 @@ int min(int x, int y)
     return y;
 }
 
-void Show(int b[8][8])
+void Show_Board(int b[8][8])
 {
     for (int i = 7; i >= 0; i--)
     {

@@ -10,8 +10,7 @@
 // The code is written almost as a pseudocode, using only the basic
 // programming operations (ifses, elses and fors).
 
-// Most of the focus is directed toward providing a very fast and friendly
-// chess games simulator.
+// Most of the focus is directed toward providing a very fast simulator.
 
 // At this stage of development, the code is able to play a random game, and return
 // a winning team. It’d be the backbone of any chess engine.

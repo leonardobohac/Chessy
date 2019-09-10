@@ -133,165 +133,6 @@ int KCastle_B = 1;
 int PQueens_W = 0;   // Promoted Queens
 int PQueens_B = 0;
 
-void Start(void)
-{
-    for(int i = 0; i < 8; i++)
-    {
-        for(int j = 0; j < 8; j++)
-        {
-            Board[i][j] = 0;
-        }
-    }
-    
-    Board[0][0] = 9;
-    Board[0][1] = 10;
-    Board[0][2] = 11;
-    Board[0][3] = 12;
-    Board[0][4] = 13;
-    Board[0][5] = 14;
-    Board[0][6] = 15;
-    Board[0][7] = 16;
-    Board[1][0] = 1;
-    Board[1][1] = 2;
-    Board[1][2] = 3;
-    Board[1][3] = 4;
-    Board[1][4] = 5;
-    Board[1][5] = 6;
-    Board[1][6] = 7;
-    Board[1][7] = 8;
-    
-    Board[7][0] = -9;
-    Board[7][1] = -10;
-    Board[7][2] = -11;
-    Board[7][3] = -12;
-    Board[7][4] = -13;
-    Board[7][5] = -14;
-    Board[7][6] = -15;
-    Board[7][7] = -16;
-    Board[6][0] = -1;
-    Board[6][1] = -2;
-    Board[6][2] = -3;
-    Board[6][3] = -4;
-    Board[6][4] = -5;
-    Board[6][5] = -6;
-    Board[6][6] = -7;
-    Board[6][7] = -8;
-    
-    for(int i = 0; i < 2; i++)
-    {
-        for(int j = 0; j < 25; j++)
-        {
-            Pieces[i][j][0] = 8;
-            Pieces[i][j][1] = 8;
-        }
-    }
-    
-    Pieces[0][1][0] = 1;
-    Pieces[0][1][1] = 0;
-    
-    Pieces[0][2][0] = 1;
-    Pieces[0][2][1] = 1;
-    
-    Pieces[0][3][0] = 1;
-    Pieces[0][3][1] = 2;
-    
-    Pieces[0][4][0] = 1;
-    Pieces[0][4][1] = 3;
-    
-    Pieces[0][5][0] = 1;
-    Pieces[0][5][1] = 4;
-    
-    Pieces[0][6][0] = 1;
-    Pieces[0][6][1] = 5;
-    
-    Pieces[0][7][0] = 1;
-    Pieces[0][7][1] = 6;
-    
-    Pieces[0][8][0] = 1;
-    Pieces[0][8][1] = 7;
-    
-    Pieces[0][9][0] = 0;
-    Pieces[0][9][1] = 0;
-    
-    Pieces[0][10][0] = 0;
-    Pieces[0][10][1] = 1;
-    
-    Pieces[0][11][0] = 0;
-    Pieces[0][11][1] = 2;
-    
-    Pieces[0][12][0] = 0;
-    Pieces[0][12][1] = 3;
-    
-    Pieces[0][13][0] = 0;
-    Pieces[0][13][1] = 4;
-    
-    Pieces[0][14][0] = 0;
-    Pieces[0][14][1] = 5;
-    
-    Pieces[0][15][0] = 0;
-    Pieces[0][15][1] = 6;
-    
-    Pieces[0][16][0] = 0;
-    Pieces[0][16][1] = 7;
-    
-    
-    Pieces[1][1][0] = 6;
-    Pieces[1][1][1] = 0;
-    
-    Pieces[1][2][0] = 6;
-    Pieces[1][2][1] = 1;
-    
-    Pieces[1][3][0] = 6;
-    Pieces[1][3][1] = 2;
-    
-    Pieces[1][4][0] = 6;
-    Pieces[1][4][1] = 3;
-    
-    Pieces[1][5][0] = 6;
-    Pieces[1][5][1] = 4;
-    
-    Pieces[1][6][0] = 6;
-    Pieces[1][6][1] = 5;
-    
-    Pieces[1][7][0] = 6;
-    Pieces[1][7][1] = 6;
-    
-    Pieces[1][8][0] = 6;
-    Pieces[1][8][1] = 7;
-    
-    Pieces[1][9][0] = 7;
-    Pieces[1][9][1] = 0;
-    
-    Pieces[1][10][0] = 7;
-    Pieces[1][10][1] = 1;
-    
-    Pieces[1][11][0] = 7;
-    Pieces[1][11][1] = 2;
-    
-    Pieces[1][12][0] = 7;
-    Pieces[1][12][1] = 3;
-    
-    Pieces[1][13][0] = 7;
-    Pieces[1][13][1] = 4;
-    
-    Pieces[1][14][0] = 7;
-    Pieces[1][14][1] = 5;
-    
-    Pieces[1][15][0] = 7;
-    Pieces[1][15][1] = 6;
-    
-    Pieces[1][16][0] = 7;
-    Pieces[1][16][1] = 7;
-    
-    QCastle_W = 1;
-    QCastle_B = 1;
-    
-    KCastle_W = 1;
-    KCastle_B = 1;
-    
-    PQueens_W = 0;
-    PQueens_B = 0;
-}
 
 int Check(int team)
 {
@@ -3097,7 +2938,7 @@ int Promotion(int type, int arg0, int arg1, int arg2, int arg3, int arg4, int nQ
     return 0;
 }
 
-int Play(int rounds, int new)
+int Play(int rounds)
 {
     int type;
     int arg0;
@@ -3110,8 +2951,6 @@ int Play(int rounds, int new)
     int rm;   // Random move
     
     int Last_Move[6];
-    
-    if(new){Start();}
     
     for(int round = 1; round <= rounds; round++)
     {
@@ -3333,5 +3172,5 @@ int Play(int rounds, int new)
 
 int main()
 {
-    Play(100,1);
+    Play(100);
 }
